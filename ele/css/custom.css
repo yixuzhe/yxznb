@@ -1,0 +1,103 @@
+.mainTemp{
+    background-color: rgba(255,255,255,1);
+    border-top: rgba(221,221,221,1) 1px solid;
+    text-align: center;
+}
+.mainTemp i{
+    display: block;
+}
+.goTopTemp{
+    position: fixed;
+    right: 2em;
+    bottom: 4em;
+    text-align: center;
+}
+.goTopTemp i{
+    display: block;
+}
+.topBannerTemp{
+    background-color: #269dee;
+    padding-bottom: 0.5em;
+}
+
+.doot{
+    text-align: right;
+    margin-left: 200px;
+}
+
+.bgimg{
+    /**
+	 * 设置容器宽度95%，然后水平居中，这样两边留白;
+	 * 这里不能用padding，因为背景图片也会覆盖padding
+	 */
+    width: 95%;
+    margin: 0 auto;
+    height: 29vw;
+
+    /*此三个样式组合，可以保证背景图片充满整个容器*/
+    background-image: url(../img/index_banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    box-sizing: border-box;
+    padding: 2vw 6vw;
+    margin-top: 60px;
+}
+.super{
+    width: 95%;
+    margin: 0 auto;
+    height: 100px;
+    background-color: #FEEDC1;
+    margin-top: 1.3vw;
+    margin-bottom: 50px;
+    border-radius: 2vm;
+    color: #644F1B;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper .order li .order-info{
+    box-sizing: border-box;
+    padding: 2vw 4vw;
+    font-size: 4vw;
+    color: #666;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper .order li .order-info .order-info-right{
+    display: flex;
+}
+.wrapper .order li .order-info .order-info-right .order-info-right-icon{
+    background-color: #ff02e6;
+    color: #fff;
+    border-radius: 3px;
+    margin-left: 2vw;
+    user-select: none;
+    cursor: pointer;
+    color: #34ce57;
+}
+.wrapper .order li .order-detailet{
+    width: 100%;
+}
+.wrapper .order li .order-detailet li{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1vw 4vw;
+    color: #666;
+    font-size: 3vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.choose i{
+    color: #34ce57;
+}
+.tanxing{
+    display: flex;
+    flex-direction: row;
+}
+

@@ -1,0 +1,163 @@
+.mainTemp{
+    background-color: rgba(255,255,255,1);
+    border-top: rgba(221,221,221,1) 1px solid;
+    text-align: center;
+}
+.mainTemp i{
+    display: block;
+}
+.goTopTemp{
+    position: fixed;
+    right: 2em;
+    bottom: 4em;
+    text-align: center;
+}
+.goTopTemp i{
+    display: block;
+}
+.topBannerTemp{
+    background-color: #269dee;
+    padding-bottom: 0.5em;
+}
+
+.doot{
+    text-align: right;
+    margin-left: 200px;
+}
+
+.bgimg{
+    /**
+	 * 设置容器宽度95%，然后水平居中，这样两边留白;
+	 * 这里不能用padding，因为背景图片也会覆盖padding
+	 */
+    width: 95%;
+    margin: 0 auto;
+    height: 29vw;
+
+    /*此三个样式组合，可以保证背景图片充满整个容器*/
+    background-image: url(../img/index_banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    box-sizing: border-box;
+    padding: 2vw 6vw;
+    margin-top: 60px;
+}
+.super{
+    width: 95%;
+    margin: 0 auto;
+    height: 100px;
+    background-color: #FEEDC1;
+    margin-top: 1.3vw;
+    margin-bottom: 50px;
+    border-radius: 2vm;
+    color: #644F1B;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper .order li .order-info{
+    box-sizing: border-box;
+    padding: 2vw 4vw;
+    font-size: 4vw;
+    color: #666;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper .order li .order-info .order-info-right{
+    display: flex;
+}
+.wrapper .order li .order-info .order-info-right .order-info-right-icon{
+    background-color: #ff02e6;
+    color: #fff;
+    border-radius: 3px;
+    margin-left: 2vw;
+    user-select: none;
+    cursor: pointer;
+    color: #34ce57;
+}
+.wrapper .order li .order-detailet{
+    width: 100%;
+}
+.wrapper .order li .order-detailet li{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1vw 4vw;
+    color: #666;
+    font-size: 3vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.choose i{
+    color: #34ce57;
+}
+.tanxing{
+    display: flex;
+    flex-direction: row;
+}
+
+#car>#firstcar>.quan{
+     width: 16vw;
+     height: 16vw;
+     box-sizing: border-box;
+     border: solid 1.6vw #444;
+     border-radius: 8vw;
+     background-color: #3190E8;
+     font-size: 7vw;
+     color: #fff;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     margin-top: -4vw;
+     margin-left: 3vw;
+
+     position: relative;
+ }
+#car>#firstcar .cart{
+    width: 3vw;
+    height: 3vw;
+    border-radius: 2.5vw;
+    background-color: red;
+    color: #fff;
+    font-size: 3.6vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: -1.5vw;
+    top: -1.5vw;
+}
+#car #secondcar{
+    background-color: #38CA73;
+    width: 250px;
+    font-size: 30px;
+    color: white;
+    line-height: 140px;
+    text-align: center;
+}
+#car #firstcar p{
+    font-size: 25px;
+}
+#car #firstcar p,h4{
+    font-size: 25px;
+    color: white;
+}
+#car #thirdcar{
+    width: 60vw;
+    height: 1.5vw;
+}
+.toptext {
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+

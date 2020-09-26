@@ -1,0 +1,186 @@
+{
+  "dataZone": {
+    "foodCategory": [
+      {"imgSrc":"img/dcfl01.png","categoryName": "美食"},
+      {"imgSrc":"img/dcfl02.png","categoryName": "早餐"},
+      {"imgSrc":"img/dcfl03.png","categoryName": "跑腿代购"},
+      {"imgSrc":"img/dcfl04.png","categoryName": "汉堡披萨"},
+      {"imgSrc":"img/dcfl05.png","categoryName": "甜品饮品"},
+      {"imgSrc":"img/dcfl06.png","categoryName": "速食简食"},
+      {"imgSrc":"img/dcfl07.png","categoryName": "地方小吃"},
+      {"imgSrc":"img/dcfl08.png","categoryName": "米粉面馆"},
+      {"imgSrc":"img/dcfl09.png","categoryName": "包子粥铺"},
+      {"imgSrc":"img/dcfl10.png","categoryName": "炸鸡炸串"}
+    ],
+    "advertising": {"title": "品质套餐","description": "搭配齐全吃得好","href": "#/暂时留空",
+      "bgImgSrc": "img/index_banner.png"
+    },
+    "recommendMerchant": [
+      {"imgSrc": "img/sj01.png","name": "万家饺子(睿道店)",
+        "star": 5,"score": 4.8,
+        "sales": 344,"delivery": "美团の","start": 15,"deliveryCost": 3,
+        "distance": 3.33,
+        "time": 30,
+        "tips": "各种饺子海菜包子",
+        "activity": [{"type": 1,"des": "新用户首单立减999元"},{"type": 2,"des": "特价商品不要钱"}]
+      },
+      {"imgSrc": "img/sj02.png","name": "李家饺子(睿道店)",
+        "star": 4,"score": 4.8,
+        "sales": 344,"delivery": "美团の","start": 15,"deliveryCost": 3,
+        "distance": 3.33,
+        "time": 30,
+        "tips": "鲅鱼饼子",
+        "activity": [{"type": 1,"des": "新用户首单不要钱"},{"type": 2,"des": "特价商品不要钱"}]
+      },
+      {"imgSrc": "img/sj03.png","name": "麦当劳(睿道店)",
+        "star": 4,"score": 4.8,
+        "sales": 344,"delivery": "美团の","start": 15,"deliveryCost": 3,
+        "distance": 3.33,
+        "time": 30,
+        "tips": "鲅鱼饼子",
+        "activity": [{"type": 1,"des": "新用户首单不要钱"},{"type": 2,"des": "特价商品不要钱"}]
+      },
+      {"imgSrc": "img/sj04.png","name": "米村拌饭",
+        "star": 4,"score": 4.8,
+        "sales": 344,"delivery": "美团の","start": 15,"deliveryCost": 3,
+        "distance": 3.33,
+        "time": 30,
+        "tips": "鲅鱼饼子",
+        "activity": [{"type": 1,"des": "新用户首单不要钱"},{"type": 2,"des": "特价商品不要钱"}]
+      },
+      {"imgSrc": "img/sj05.png","name": "申记串道",
+        "star": 4,"score": 4.8,
+        "sales": 344,"delivery": "美团の","start": 15,"deliveryCost": 3,
+        "distance": 3.33,
+        "time": 30,
+        "tips": "鲅鱼饼子",
+        "activity": [{"type": 1,"des": "新用户首单不要钱"},{"type": 2,"des": "特价商品不要钱"}]
+      },
+      {"imgSrc": "img/sj06.png","name": "半亩良田",
+        "star": 4,"score": 4.8,
+        "sales": 344,"delivery": "美团の","start": 15,"deliveryCost": 3,
+        "distance": 3.33,
+        "time": 30,
+        "tips": "鲅鱼饼子",
+        "activity": [{"type": 1,"des": "新用户首单不要钱"},{"type": 2,"des": "特价商品不要钱"}]
+      },
+      {"imgSrc": "img/sj07.png","name": "茶兮",
+        "star": 4,"score": 4.8,
+        "sales": 344,"delivery": "美团の","start": 15,"deliveryCost": 3,
+        "distance": 3.33,
+        "time": 30,
+        "tips": "鲅鱼饼子",
+        "activity": [{"type": 1,"des": "新用户首单不要钱"},{"type": 2,"des": "特价商品不要钱"}]
+      },
+      {"imgSrc": "img/sj08.png","name": "唯一水果捞",
+        "star": 4,"score": 4.8,
+        "sales": 344,"delivery": "美团の","start": 15,"deliveryCost": 3,
+        "distance": 3.33,
+        "time": 30,
+        "tips": "鲅鱼饼子",
+        "activity": [{"type": 1,"des": "新用户首单不要钱"},{"type": 2,"des": "特价商品不要钱"}]
+      },
+      {"imgSrc": "img/sj09.png","name": "满园春饼",
+        "star": 4,"score": 4.8,
+        "sales": 344,"delivery": "美团の","start": 15,"deliveryCost": 3,
+        "distance": 3.33,
+        "time": 30,
+        "tips": "鲅鱼饼子",
+        "activity": [{"type": 1,"des": "新用户首单不要钱"},{"type": 2,"des": "特价商品不要钱"}]
+      }
+    ],
+    "blists":[
+      {
+        "locationname": "万家饺子(软件园E18店)",
+        "foodname": "纯肉鲜肉(水饺)x2",
+        "foodname2": "玉米鲜肉(水饺)x1",
+        "delivery": "配送费",
+        "allprice": "49",
+        "foodnameprice": "15",
+        "foodname2price": "16",
+        "deliveryprice": "3",
+        "gotopay": "去支付",
+        "ccount":1
+
+      },
+      {
+        "locationname": "小锅拌饭豆腐馆(全运店)",
+        "foodname": "纯肉鲜肉(水饺)x2",
+        "foodname2": "玉米鲜肉(水饺)x1",
+        "delivery": "配送费",
+        "allprice": "55",
+        "foodnameprice": "15",
+        "foodname2price": "16",
+        "deliveryprice": "3",
+        "gotopay": "去支付",
+        "ccount":1
+
+      }
+
+    ],
+	"lists":[
+	  {
+	    "img":"img/sp01.png",
+	    "logal":"招牌",
+	    "name":"纯肉鲜肉(水饺)",
+	    "message":"新鲜猪肉",
+	    "price":15,
+	    "count":3
+	  },
+	  {
+	    "img":"img/sp02.png",
+	    "logal":"招牌",
+	    "name":"玉米鲜肉(水饺)",
+	    "message":"玉米猪肉",
+	    "price":16,
+	    "count":2
+	  },
+	  {
+	    "img":"img/sp03.png",
+	    "logal":"",
+	    "name":"虾仁三鲜(蒸饺)",
+	    "message":"虾仁三鲜",
+	    "price":22,
+	    "count":1
+	  },
+	  {
+	    "img":"img/sp04.png",
+	    "logal":"",
+	    "name":"素三鲜(蒸饺)",
+	    "message":"素三鲜",
+	    "price":15,
+	    "count":1
+	  },
+	  {
+	    "img":"img/sp05.png",
+	    "logal":"",
+	    "name":"角瓜鸡蛋(蒸饺)",
+	    "message":"角瓜鸡蛋",
+	    "price":16,
+	    "count":1
+	  },
+	  {
+	    "img":"img/sp06.png",
+	    "logal":"",
+	    "name":"小白菜肉(水饺)",
+	    "message":"小白菜肉",
+	    "price":18,
+	    "count":1
+	  },
+	  {
+	    "img":"img/sp07.png",
+	    "logal":"",
+	    "name":"芹菜牛肉(水饺)",
+	    "message":"芹菜牛肉",
+	    "price":18,
+	    "count":1
+	  }
+	],
+    "payshopinfo":[
+      {"imgSrc": "img/sj01.png","gname": "万家饺子(万达店)",
+        "price":"￥15起送￥3配送",
+        "tips": "各种炒菜饺子"
+      }
+    ]
+  }
+}

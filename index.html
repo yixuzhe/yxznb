@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- 引入 Bootstrap -->
+    <link href="./css/bootstrap.css" rel="stylesheet"/>
+    <link href="./css/font-awesome.css" rel="stylesheet"/>
+    <link href="./css/custom.css" rel="stylesheet"/>
+    <link href="./css/animate.css" rel="stylesheet"/>
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" rel="external nofollow" ></script>          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js" rel="external nofollow" ></script>       <![endif]-->
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <!-- 包括所有已编译的插件 -->
+</head>
+<body>
+<div id="app">
+    <transition enter-active-class="animated fadeIn">
+        <router-view></router-view>
+    </transition>
+</div>
+
+<!--顶部定位搜索栏-->
+<template id="topBannerTemp">
+    <div class="topBannerTemp">
+        <slot name="loc"></slot>
+        <slot name="content"></slot>
+    </div>
+</template>
+
+<template id="typeTemp">
+    <div class="container-fluid  mainNavTemp text-muted">
+        <div class="row">
+        <span v-for="(item,index) in $root.foodCategory" class="col-2 text-center mt-3" :class="{'offset-1': !(index%5)}">
+            <router-link to="/mou">
+            <img v-bind:src="item.imgSrc"><br/>
+            {{item.categoryName}}
+            </router-link>
+        </span>
+        </div>
+    </div>
+</template>
+<!--配置路由模板-->
+<!--商家信息-->
+<template id="mouTemp">
+    <div>
+        <topbannercpn>
+            <div slot="content" style="height: 50px;padding:10px;text-align: center;color: white" >
+                <h3>商户列表</h3>
+            </div>
+        </topbannercpn>
+        </topbannercpn>
+        <router-link to="/smlist">
+        <recommcpn></recommcpn>
+        <mainnavcpn></mainnavcpn>
+        <gotopcpn></gotopcpn>
+        </router-link>
+    </div>
+
+</template>
+
+<!--主页面-->
+<template id="homeTemp">
+    <div>
+        <topbannercpn>
+            <div slot="loc" id="infoBar">
+                <i class="fa fa-location-arrow"></i>大连东软信息学院<i class="fa fa fa-arrow-circle-o-down"></i>
+            </div>
+            <div slot="content" id="searchBar">
+                <div class="input-group mb-0 mt-3 col-10 offset-1">
+                    <div class="input-group-prepend">
+                     <span class="input-group-text">
+                         <i class="fa fa-search"></i>
+                     </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="搜索饿了么商户">
+                </div>
+            </div>
+        </topbannercpn>
+        <mainnavcpn></mainnavcpn>
+        <gotopcpn></gotopcpn>
+        <div style="height: 2000px;background-color: white">
+            <typecpn></typecpn>
+            <div class="bgimg">
+                <h1 class="font-weight-bold">品质套餐</h1>
+                <h3 class="text-muted">搭配齐全吃得好</h3>
+                <a href="index.html"><h3>立即抢购 ></h3></a>
+            </div>
+            <!--会员-->
+            <div class="super">
+                <img src="img/super_member.png"/>
+                <span class="font-weight-bolder display-4">超级会员?</span>
+                <span>每月享超值权益</span>
+                <a href="index.html"><span class="text-right">立即开通 ></span></a>
+            </div>
+            <!--推荐商家-->
+            <h3 class="text-center">---推荐商家---</h3>
+            <recommcpn></recommcpn>
+        </div>
+    </div>
+</template>
+<!--商家信息组件-->
+<template id="shopmessageTemp">
+    <div>
+        <topbannercpn class="fixed-top">
+            <div slot="content" style="height: 50px;padding:10px;text-align: center;color: white"  >
+               <h3>商家信息</h3> 
+            </div>
+        </topbannercpn>
+        <div class="container-fluid">
+            <div v-for="(item,index) in $root.payshopinfo" class="shopmessageTemp row text-muted ">
+                <div class="col-12  offset-3">
+                    <img  style="height: 15vw;width: 15vw" v-bind:src="item.imgSrc"/>
+                </div>
+                <div class="col-12 offset-3">
+                    <h1 class="font-weight-bolder text-dark">{{item.gname}}</h1>
+                    <p>{{item.price}}</p>
+                    <p>{{item.tips}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+        <div v-for="(item,index) in $root.sLists" class="shopmessageTemp row">
+            <div class="col-12 col-sm-2 pt-3">
+                <img v-bind:src="item.img"/>
+            </div>
+            <div class="col-8 col-sm-4">
+            <h3 class=" font-weight-bold">{{item.name}}</h3>
+            <p class="text-muted ">
+                <span>{{item.price}}</span>
+                <span>{{item.pprice}}</span>
+            </p>
+            <p class="text-muted">{{item.message}}</p>
+            </div>
+            <div class="col-4 col-sm-4 boot" style="text-align: right">
+                <button v-on:click="item.count--" v-bind:disabled="item.count==1">-</button>
+                {{item.count}}
+                <button v-on:click="item.count++" v-bind:disabled="item.count==9">+</button>
+            </div>
+        </div>
+        </div>
+        <div v-for="(item,index) in $root.shopmessageLists" class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <img v-bind:src="item.img"/>
+                </div>
+                <div class="col-7">
+                    <span>{{item.logal}}</span>
+                    <h3>{{item.name}}</h3>
+                    <p>{{item.message}}</p>
+                    <p>{{item.price}}</p>
+                </div>
+                <div class="col-2">
+                    <p>{{item.count}}</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="fixed-bottom row">
+            <div id="car" class="row">
+                <div id="firstcar" class="bg-dark row">
+                    <div class="quan" >
+                        <i class="fa fa-shopping-cart" ></i>
+                        <div class="cart">3</div>
+                    </div>
+                    <div id="thirdcar" class="row">
+                        <div class="bg-dark">
+                            <h4 class="display-4 font-weight-bold"style="padding-left: 20px">12.88</h4>
+                            <p>另需配送费3元</p>
+                        </div>
+                    </div>
+                    <router-link to="/payonline">
+                        <div id="secondcar">去结算</div>
+                    </router-link>
+                </div>
+            </div>
+        </div>
+        <mainnavcpn></mainnavcpn>
+        <gotopcpn></gotopcpn>
+    </div>
+</template>
+
+<!--详细信息-->
+<template id="reTemp">
+    <div class="container-fluid ">
+            <div v-for="(item,index) in $root.recommendMerchant" class="row text-muted respan">
+            <div class="col-12 col-sm-2 pt-3 ">
+                    <img v-bind:src="item.imgSrc" :alt="item.name"/>
+            </div>
+            <div class="col-8 col-sm-4" style="text">
+                <h3 class="font-weight-bolder text-dark">{{item.name}}</h3>
+                <p><i v-for="i in item.star" class="fa fa-star text-warning"></i>4.9月售345单</p>
+                <p>各种饺子</p>
+                <p><span class="spa" style="background-color: lawngreen;">新</span>新用户xxxx</p>
+                <p><span class="spa" style="background-color: orangered">特</span>特价用户</p>
+            </div>
+            <div class="col-4 col-sm-3 doot" style="text-align: right">
+                <p>.</p>
+                <p>蜂鸟专送</p>
+                <p>3.22km|30分钟</p>
+                <p><i class="fa fa-arrow-circle-down"></i></p>
+            </div>
+        </div>
+    </div>
+</template>
+<!--我的页面登录组件-->
+<template id="loginTemp">
+    <div>
+        <topbannercpn>
+            <div slot="content" style="height: 50px;padding:10px;text-align: center;color: white">
+                用户登录
+            </div>
+        </topbannercpn>
+        <div>
+            <form>
+                <div class="input-group mb-3 ">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">手机号码:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="手机号码" id="demo" name="phone">
+                </div>
+                <div class="input-group mb-3 ">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">用户密码:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="密码" id="demo1" name="password">
+                </div>
+                <button type="button" class="btn btn-success btn-block">登录</button>
+                <router-link to="/register">
+                    <button type="button" class="btn btn-outline-secondary btn-block">去注册</button>
+                </router-link>
+            </form>
+        </div>
+        <mainnavcpn></mainnavcpn>
+        <gotopcpn></gotopcpn>
+    </div>
+</template>
+
+<!--下面是订单页面-->
+<template id="orderTemp">
+    <div class="wrapper">
+        <topbannercpn>
+            <div slot="content" style="height: 50px;padding:10px;text-align: center;color: white">
+                <h3>订单详情</h3>
+            </div>
+        </topbannercpn>
+        <h3>未支付订单:</h3>
+        <div v-for="(item,index) in $root.bLists" >
+            <ul class="order">
+                <li>
+                    <div class="order-info">
+                        <p v-on:click="isShow=!isShow">{{item.locationname}}<i class="fa fa-caret-down"></i></p>
+                        <div class="order-info-right">
+                            <p>&#165;{{item.allprice}}</p>
+                            <div class="order-info-right-icon">
+                                <router-link to="/payonline">{{item.gotopay}}</router-link>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="order-detailet" v-show="isShow">
+                        <li>
+                            <p>{{item.foodname}}</p>
+                            <p>&#165;{{item.foodnameprice}}</p>
+                        </li>
+                        <li>
+                            <p>{{item.foodname2}}</p>
+                            <p>&#165;{{item.foodname2price}}</p>
+                        </li>
+                        <li>
+                            <p>{{item.delivery}}</p>
+                            <p>&#165;{{item.deliveryprice}}</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </li>
+            </ul>
+
+        </div>
+        <mainnavcpn></mainnavcpn>
+    </div>
+</template>
+<!--下面是在线支付页面-->
+<template id="payTemp">
+    <div class="wrapper">
+        <topbannercpn>
+            <div slot="content" style="height: 50px;padding:10px;text-align: center;color: white">
+                <h3>在线支付</h3>
+            </div>
+        </topbannercpn>
+        <h3>订单信息:</h3>
+        <div v-for="(item,index) in $root.bLists" >
+            <ul class="order" type="none">
+                <li>
+                    <div class="order-info" style="text-align: left">
+                        <p style="font-size: 25px">{{item.locationname}}<i class="fa fa-caret-down" v-on:click="isShow=!isShow"></i></p>
+                        <div class="order-info-right">
+                            <p style="font-size: 30px">&#165;{{item.allprice}}</p>
+                        </div>
+                    </div>
+                    <ul class="order-detailet" v-show="isShow">
+                        <li>
+                            <p>{{item.foodname}}</p>
+                            <p>&#165;{{item.foodnameprice}}</p>
+                        </li>
+                        <li>
+                            <p>{{item.foodname2}}</p>
+                            <p>&#165;{{item.foodname2price}}</p>
+                        </li>
+                        <li>
+                            <p>{{item.delivery}}</p>
+                            <p>&#165;{{item.deliveryprice}}</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </li>
+            </ul>
+
+        </div>
+        <ul class="choose" type="none">
+            <li><img src="./img/alipay.png " >
+                <i class="fa fa-check-square"></i></li>
+            <li><img src="./img/wechat.png" ></li>
+        </ul>
+        <mainnavcpn></mainnavcpn>
+
+    </div>
+</template>
+<!--注册组件-->
+<template id="registerTemp">
+    <div>
+        <topbannercpn>
+            <div slot="content"  style="height: 50px;padding:10px;text-align: center;color: white">
+                用户注册
+            </div>
+        </topbannercpn>
+        <form>
+            <div class="input-group mb-3 ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">手机号码:</span>
+                </div>
+                <input type="text" class="form-control" placeholder="手机号码"  name="phone">
+            </div>
+            <div class="input-group mb-3 ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">用户密码:</span>
+                </div>
+                <input type="text" class="form-control" placeholder="密码"  name="password">
+            </div>
+            <div class="input-group mb-3 ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">确认密码:</span>
+                </div>
+                <input type="text" class="form-control" placeholder="确认密码"  name="phone">
+            </div>
+            <div class="input-group mb-3 ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">用户姓名:</span>
+                </div>
+                <input type="text" class="form-control" placeholder="用户姓名"  name="password">
+            </div>
+            性别:<input type="radio" name="sex">男
+            <input type="radio" name="sex">女
+            <button type="button" class="btn btn-success btn-block">注册</button>
+        </form>
+        <mainnavcpn></mainnavcpn>
+    </div>
+</template>
+<!--回到顶部-->
+<template id="goTopTemp">
+    <div class="goTopTemp" v-show="topDistance>100" v-on:click="gotop">
+        <h6><i class="fa fa-arrow-circle-o-up"></i>回到顶部位</h6>
+    </div>
+</template>
+<!--页面底部主导航-->
+<template id="mainTemp">
+    <div class="container-fluid fixed-bottom text-muted mainTemp">
+        <div class="row">
+            <router-link to="/home" class="col-2 offset-2">
+                <span><i class="fa fa-home"></i>首页</span>
+            </router-link>
+            <router-link to="/mou" class="col-2">
+                <span><i class="fa fa-home"></i>发现</span>
+            </router-link>
+            <router-link to="/odlist" class="col-2">
+                <span><i class="fa fa-home"></i>订单</span>
+            </router-link>
+            <router-link to="/login" class="col-2">
+                <span><i class="fa fa-home"></i>我的</span>
+            </router-link>
+        </div>
+    </div>
+</template>
+
+<script src="./js/jquery-3.3.1.js" ></script>
+<script src="./js/bootstrap.js"></script>
+<script src="./js/vue.js"></script>
+<script src="./js/vue-resources.js"></script>
+<script src="./js/vue-router.js"></script>
+<script src="./js/custom.js"></script>
+</body>
+</html>
